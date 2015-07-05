@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/gstressfs/!svn/ver/6/trunk/po
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/gstressfs/!svn/ver/5/trunk/po/ChangeLog
+END
+Makefile.in.in
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/gstressfs/!svn/ver/6/trunk/po/Makefile.in.in
+END
+gettext_commande
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/gstressfs/!svn/ver/5/trunk/po/gettext_commande
+END
+POTFILES.in
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/gstressfs/!svn/ver/5/trunk/po/POTFILES.in
+END
