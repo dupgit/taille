@@ -64,26 +64,6 @@ msgstr ""
 "  -h, --help\tCette aide.\n"
 "  -v, --version\tInformation sur la version du programme.\n"
 
-#: ../src/taille.c:124
-#, c-format
-msgid "Gettext package : %s\n"
-msgstr ""
-
-#: ../src/taille.c:128
-#, c-format
-msgid "Bindtextdomain : %s\n"
-msgstr ""
-
-#: ../src/taille.c:133
-#, c-format
-msgid "Code set : %s\n"
-msgstr ""
-
-#: ../src/taille.c:138
-#, c-format
-msgid "Text domain : %s\n"
-msgstr ""
-
 #: ../src/taille.c:152
 #, c-format
 msgid "Integer types:\n"

@@ -123,21 +123,21 @@ static void init_international_languages(void)
 
 	if (DEBUG == TRUE)
 		{
-			fprintf(stdout, _("Gettext package : %s\n"), GETTEXT_PACKAGE);
+			fprintf(stdout, "Gettext package : %s\n", GETTEXT_PACKAGE);
 
 			if (result != NULL)
 				{
-					fprintf(stdout, _("Bindtextdomain : %s\n"), result);
+					fprintf(stdout, "Bindtextdomain : %s\n", result);
 				}
 
 			if (codeset != NULL)
 				{
-					fprintf(stdout, _("Code set : %s\n"), codeset);
+					fprintf(stdout, "Code set : %s\n", codeset);
 				}
 
 			if (text_domain != NULL)
 				{
-					fprintf(stdout, _("Text domain : %s\n"), text_domain);
+					fprintf(stdout, "Text domain : %s\n", text_domain);
 				}
 		}
 }
