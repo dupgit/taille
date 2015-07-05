@@ -112,17 +112,19 @@ static void print_int_types(void)
 {
 	unsigned long taille = 0;
 
+	fprintf(stdout, "Integer types:\n");
+	
 	taille = sizeof(short int);
-	fprintf(stdout, "short int     : %ld (%ld bits)\n", taille, taille*8);
+	fprintf(stdout, "\tshort int    : %ld (%ld bits)\n", taille, taille*8);
 
 	taille = sizeof(int);	
-	fprintf(stdout, "int           : %ld (%ld bits)\n", taille, taille*8);
+	fprintf(stdout, "\tint          : %ld (%ld bits)\n", taille, taille*8);
 	
 	taille = sizeof(long int);
-	fprintf(stdout, "long int      : %ld (%ld bits)\n", taille, taille*8);
+	fprintf(stdout, "\tlong int     : %ld (%ld bits)\n", taille, taille*8);
 
-        taille = sizeof(long long int);
-	fprintf(stdout, "long long int : %ld (%ld bits)\n", taille, taille*8); 
+    taille = sizeof(long long int);
+	fprintf(stdout, "\tlong long int: %ld (%ld bits)\n", taille, taille*8); 
 }
 
 
