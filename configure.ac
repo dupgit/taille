@@ -1,10 +1,14 @@
 AC_PREREQ(2.59)
 
 AC_INIT([taille], [0.0.1],
-        [olivier.delhomme@free.fr],
+        [Olivier DELHOMME <olivier.delhomme@free.fr>],
         [taille])
-AC_CONFIG_HEADER([config.h])
+        
 AM_INIT_AUTOMAKE([$PACKAGE_TARNAME], [$PACKAGE_VERSION])
+
+AC_PROG_CC
+AC_CONFIG_MACRO_DIR([m4])
+AC_PROG_INTLTOOL([0.23])
 
 dnl directory requirement
 TOP_DIR=`pwd`
@@ -13,22 +17,25 @@ AC_SUBST(TOP_DIR)
 AC_SUBST(SRC_DIR)
 
 dnl Libraries requirements
+PKG_PROG_PKG_CONFIG([0.10])
 GLIB2_VERSION=2.10.0
 
 AC_SUBST(GLIB2_VERSION)
 
-AM_MAINTAINER_MODE
-
-dnl Put the preprocessor macros in a header instead of command line 
+dnl ***********************************************************************
+dnl * Put the preprocessor macros in a header file                        *
+dnl * instead of command line                                             *
+dnl ***********************************************************************
+AC_CONFIG_HEADER([config.h])
 AC_CONFIG_SRCDIR([src/taille.c])
 
 dnl Checks for headers
-AC_HEADER_STDC
+dnl AC_HEADER_STDC
 dnl AC_HEADER_DIRENT
-AC_CHECK_HEADERS([getopt.h])
+dnl AC_CHECK_HEADERS([getopt.h])
 
 dnl Checks for typedefs, structures, and compiler characteristics.
-AC_C_CONST
+dnl AC_C_CONST
 dnl AC_TYPE_PID_T
 dnl AC_TYPE_SIZE_T
 dnl AC_TYPE_SIGNAL
@@ -41,7 +48,35 @@ dnl AC_FUNC_VPRINTF
 dnl AC_CHECK_FUNCS(gettimeofday select socket strdup strerror strstr)
 
 dnl Checks for programs
-AM_PROG_LIBTOOL
+dnl AM_PROG_LIBTOOL
+
+dnl ***********************************************************************
+dnl * Build time sanity check                                             *
+dnl ***********************************************************************
+AM_SANITY_CHECK
+
+
+dnl ***********************************************************************
+dnl * Initialize maintainer mode                                          *
+dnl ***********************************************************************
+AM_MAINTAINER_MODE
+
+
+dnl ***********************************************************************
+dnl * Checks for headers                                                  *
+dnl ***********************************************************************
+AC_HEADER_STDC
+
+AC_CHECK_HEADERS( \
+ getopt.h         
+)
+
+dnl ***********************************************************************
+dnl * Checks dynamic libraries capabilities                               *
+dnl ***********************************************************************
+AC_DISABLE_STATIC
+AC_PROG_LIBTOOL
+
 
 if test "x$prefix" = "xNONE"; then
 	prefix="/usr/local"
@@ -64,13 +99,13 @@ dnl languages
 dnl ********************************************************
 dnl ALL_LINGUAS="fr_FR"
 
+
 dnl ********************************************************
 dnl triggers gettext
 dnl ********************************************************
-AC_PROG_INTLTOOL([0.23])
 GETTEXT_PACKAGE=taille
 AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,["$GETTEXT_PACKAGE"],[gettext domain])
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,["$GETTEXT_PACKAGE"],[Gettext Package used])
 AM_GLIB_GNU_GETTEXT
 
 
