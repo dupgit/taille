@@ -62,7 +62,7 @@ AC_SUBST(sysconfdir)
 dnl ********************************************************
 dnl languages
 dnl ********************************************************
-ALL_LINGUAS="fr_FR"
+dnl ALL_LINGUAS="fr_FR"
 
 dnl ********************************************************
 dnl triggers gettext
