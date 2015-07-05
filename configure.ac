@@ -5,6 +5,7 @@ AC_INIT([taille], [0.0.1],
         [taille])
         
 AM_INIT_AUTOMAKE([$PACKAGE_TARNAME], [$PACKAGE_VERSION])
+AM_SILENT_RULES([yes])
 
 AC_PROG_CC
 AC_CONFIG_MACRO_DIR([m4])
@@ -105,7 +106,7 @@ dnl triggers gettext
 dnl ********************************************************
 GETTEXT_PACKAGE=taille
 AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,["$GETTEXT_PACKAGE"],[Gettext Package used])
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, ["$GETTEXT_PACKAGE"], [Gettext Package used])
 AM_GLIB_GNU_GETTEXT
 
 dnl ***********************************************************************
@@ -118,7 +119,7 @@ AC_DEFINE_UNQUOTED(LOCALE_DIR, "$prefix/share/locale", [Locale Directory])
 dnl *******************************
 dnl checking for glib
 dnl *******************************
-PKG_CHECK_MODULES(GLIB2,[glib-2.0 >= $GLIB2_VERSION])
+PKG_CHECK_MODULES(GLIB2, [glib-2.0 >= $GLIB2_VERSION])
 
 AC_PROG_INSTALL
 
@@ -128,15 +129,15 @@ CFLAGS="$CFLAGS -Wall -Wstrict-prototypes -Wmissing-declarations \
 
 case $host in
     *linux*)
-	AC_DEFINE_UNQUOTED(SYS_LINUX,1,[This is a Linux system])
+	    AC_DEFINE_UNQUOTED(SYS_LINUX, 1, [This is a Linux system])
 	;;
     *mingw*)
-	AC_DEFINE_UNQUOTED(SYS_MINGW,1,[This is a MinGW system])
-     	AC_DEFINE_UNQUOTED(WINDOWS,1,[This is a Windows system])
-     	AC_DEFINE_UNQUOTED(_WIN32,1,[This is a Windows system])
+	    AC_DEFINE_UNQUOTED(SYS_MINGW, 1, [This is a MinGW system])
+     	AC_DEFINE_UNQUOTED(WINDOWS, 1, [This is a Windows system])
+     	AC_DEFINE_UNQUOTED(_WIN32, 1, [This is a Windows system])
         CFLAGS="$CFLAGS -mms-bitfields -mwindows -mno-cygwin"
-	LDFLAGS="$LDFLAGS"
-        ;;
+	    LDFLAGS="$LDFLAGS"
+    ;;
 esac
 
 
@@ -149,10 +150,10 @@ AC_ARG_ENABLE([debug],
        yes) debug=true ;;
        no)  debug=false ;;
        *) AC_MSG_ERROR([bad value ${enableval} for --enable-debug]) ;;
-     esac],[debug=false])
+     esac], [debug=false])
 if test x$debug = xtrue
 then
- AC_DEFINE_UNQUOTED(DEBUG, TRUE,[ Debug mode On])
+ AC_DEFINE_UNQUOTED(DEBUG, TRUE, [Debug mode On])
 else
  AC_DEFINE_UNQUOTED(DEBUG, FALSE, [Debug mode Off])
 fi
@@ -167,7 +168,7 @@ AC_ARG_ENABLE([gcov],
        yes) gcov=true ;;
        no)  gcov=false ;;
        *) AC_MSG_ERROR([bad value ${enableval} for --enable-gcov]) ;;
-     esac],[gcov=false])
+     esac], [gcov=false])
 if test x$gcov = xtrue
 then
  CFLAGS="-fprofile-arcs -ftest-coverage $CFLAGS "
@@ -185,7 +186,7 @@ AC_ARG_ENABLE([gprof],
        yes) gprof=true ;;
        no)  gprof=false ;;
        *) AC_MSG_ERROR([bad value ${enableval} for --enable-gprof]) ;;
-     esac],[gprof=false])
+     esac], [gprof=false])
 if test x$gprof = xtrue
 then
  CFLAGS="-pg $CFLAGS"
@@ -203,7 +204,7 @@ AC_ARG_ENABLE([m64],
        yes) m64=true ;;
        no)  m64=false ;;
        *) AC_MSG_ERROR([bad value ${enableval} for --enable-m64]) ;;
-     esac],[m64=false])
+     esac], [m64=false])
 if test x$m64 = xtrue
 then
  CFLAGS="-m64 $CFLAGS"
@@ -221,7 +222,7 @@ AC_ARG_ENABLE([-m128bit-long-double],
        yes) m128=true ;;
        no)  m128=false ;;
        *) AC_MSG_ERROR([bad value ${enableval} for --enable-m128bit-long-double]) ;;
-     esac],[m128=false])
+     esac], [m128=false])
 if test x$m128 = xtrue
 then
  CFLAGS="-m128bit-long-double $CFLAGS"
@@ -238,16 +239,17 @@ AC_CONFIG_FILES([Makefile src/Makefile po/Makefile.in])
 AC_OUTPUT
 
 
-echo
-echo "*** Dumping configuration ***"
-echo 
-echo "    - Host                   : $host"
-echo "    - Compiler               : ${CC}"
-echo "    - Generate documentation : $enable_gtk_doc"
-echo "    - Prefix                 : $prefix"
-echo "    - Exec prefix            : $exec_prefix"
-echo "    - Data dir               : $datadir"
-echo "    - locale dir             : ${LOCALE_DIR}"
-echo
-echo "    You can now run 'make' to compile taille"
-echo
+AC_MSG_NOTICE([
+
+******** Dumping configuration ********
+ 
+     - Host                   : $host
+     - Build For OS           : $build_os
+     - Compiler               : ${CC}
+     - Prefix                 : $prefix
+     - Exec prefix            : ${exec_prefix}
+     - locale dir             : ${LOCALE_DIR}
+
+You can now run 'make' to compile taille
+
+])
