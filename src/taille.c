@@ -121,22 +121,25 @@ static void init_international_languages(void)
     codeset = bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
     text_domain = textdomain(GETTEXT_PACKAGE);
 
-    fprintf(stdout, _("Gettext package : %s\n"), GETTEXT_PACKAGE);
+	if (DEBUG == TRUE)
+		{
+			fprintf(stdout, _("Gettext package : %s\n"), GETTEXT_PACKAGE);
 
-    if (result != NULL)
-        {
-            fprintf(stdout, _("Bindtextdomain : %s\n"), result);
-        }
+			if (result != NULL)
+				{
+					fprintf(stdout, _("Bindtextdomain : %s\n"), result);
+				}
 
-    if (codeset != NULL)
-        {
-            fprintf(stdout, _("Code set : %s\n"), codeset);
-        }
+			if (codeset != NULL)
+				{
+					fprintf(stdout, _("Code set : %s\n"), codeset);
+				}
 
-    if (text_domain != NULL)
-        {
-            fprintf(stdout, _("Text domain : %s\n"), text_domain);
-        }
+			if (text_domain != NULL)
+				{
+					fprintf(stdout, _("Text domain : %s\n"), text_domain);
+				}
+		}
 }
 
 

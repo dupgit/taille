@@ -31,3 +31,4 @@ src/.deps/
 src/taille
 intltool-*
 compile
+po/fr_FR.gmo

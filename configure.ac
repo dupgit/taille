@@ -152,9 +152,9 @@ AC_ARG_ENABLE([debug],
      esac],[debug=false])
 if test x$debug = xtrue
 then
- AC_DEFINE_UNQUOTED(PROGRAM_DEBUG,TRUE,[Debug mode On])
+ AC_DEFINE_UNQUOTED(DEBUG, TRUE,[ Debug mode On])
 else
- AC_DEFINE_UNQUOTED(PROGRAM_DEBUG,FALSE,[Debug mode Off])
+ AC_DEFINE_UNQUOTED(DEBUG, FALSE, [Debug mode Off])
 fi
 
 
