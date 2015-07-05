@@ -7,10 +7,11 @@ DEFS = 	-DPLUGINS_DIR=\"$(plugins_dir)\" 	\
 	-I$(SRC_DIR)/include			\
 	$(GLIB2_CFLAGS) $(CFLAGS)
 
-AM_CPPFLAGS = -DPROGRAM_LOCALE_DIR=\"${PROGRAM_LOCALE_DIR}\"
+AM_CPPFLAGS = 
 
 bin_PROGRAMS = taille
-taille_LDFLAGS = -export-dynamic -no-undefined 
+
+taille_LDFLAGS = $(LDFLAGS) -export-dynamic -no-undefined 
 taille_LDADD = $(GLIB2_LIBS) 
 
 taille_SOURCES = 			\

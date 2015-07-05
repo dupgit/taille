@@ -108,6 +108,12 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,["$GETTEXT_PACKAGE"],[Gettext Package used])
 AM_GLIB_GNU_GETTEXT
 
+dnl ***********************************************************************
+dnl * directories definitions                                             *
+dnl ***********************************************************************
+LOCALE_DIR="$prefix/share/locale"
+AC_DEFINE_UNQUOTED(LOCALE_DIR, "$prefix/share/locale", [Locale Directory])
+
 
 dnl *******************************
 dnl checking for glib
@@ -123,8 +129,6 @@ CFLAGS="$CFLAGS -Wall -Wstrict-prototypes -Wmissing-declarations \
 case $host in
     *linux*)
 	AC_DEFINE_UNQUOTED(SYS_LINUX,1,[This is a Linux system])
-	PROGRAM_LOCALE_DIR=[${datadir}/locale]
-        AC_SUBST(PROGRAM_LOCALE_DIR)
 	;;
     *mingw*)
 	AC_DEFINE_UNQUOTED(SYS_MINGW,1,[This is a MinGW system])
@@ -243,7 +247,7 @@ echo "    - Generate documentation : $enable_gtk_doc"
 echo "    - Prefix                 : $prefix"
 echo "    - Exec prefix            : $exec_prefix"
 echo "    - Data dir               : $datadir"
-echo "    - locale dir             : ${REPLACE_LOCALE_DIR}"
+echo "    - locale dir             : ${LOCALE_DIR}"
 echo
 echo "    You can now run 'make' to compile taille"
 echo

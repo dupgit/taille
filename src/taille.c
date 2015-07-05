@@ -26,6 +26,7 @@
 static gboolean version(void);
 static gboolean usage(int status);
 static gboolean manage_command_line_options(Options *opt, int argc, char ** argv);
+static void init_international_languages(void);
 static void print_int_types(void);
 
 /**
@@ -105,6 +106,42 @@ static gboolean manage_command_line_options(Options *opt, int argc, char ** argv
 	return exit_value;
 }
 
+
+/**
+ *  Inits internationalization domain for taille project
+ */
+static void init_international_languages(void)
+{
+    gchar *result = NULL;
+    gchar *codeset = NULL;
+    gchar *text_domain = NULL;
+
+    setlocale(LC_ALL, "");
+    result = bindtextdomain(GETTEXT_PACKAGE, LOCALE_DIR);
+    codeset = bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+    text_domain = textdomain(GETTEXT_PACKAGE);
+
+    fprintf(stdout, _("Gettext package : %s\n"), GETTEXT_PACKAGE);
+
+    if (result != NULL)
+        {
+            fprintf(stdout, _("Bindtextdomain : %s\n"), result);
+        }
+
+    if (codeset != NULL)
+        {
+            fprintf(stdout, _("Code set : %s\n"), codeset);
+        }
+
+    if (text_domain != NULL)
+        {
+            fprintf(stdout, _("Text domain : %s\n"), text_domain);
+        }
+}
+
+
+
+
 /**
  *  Prints int types
  */
@@ -143,6 +180,7 @@ int main (int argc, char ** argv)
 	opt = (Options *) g_malloc0(sizeof(Options));
 	opt->usage = FALSE;
 	
+	init_international_languages();
 
 	/* Command line options evaluation */
 	exit_value = manage_command_line_options(opt, argc, argv);
