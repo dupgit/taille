@@ -24,12 +24,13 @@
 #ifndef _TAILLE_H_
 #define _TAILLE_H_
 
-#include <glib.h>
-#include <stdio.h>
-#include <getopt.h>
-
+/* Configuration from ./configure script */
 #include "config.h"
 
+#include <stdio.h>
+#include <getopt.h>
+#include <glib.h>
+#include <glib/gi18n.h>
 
 #define ProgName "taille"
 #define ProgVersion "0.0.1"

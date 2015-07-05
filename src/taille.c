@@ -34,7 +34,7 @@ static void print_int_types(void);
  */
 static gboolean version(void)
 {
-	fprintf (stdout, "%s, %s - %s - Version %s - License %s\n", ProgName, ProgAuthor, ProgDate, ProgVersion, "GPL V2 or higher");
+	fprintf (stdout, _("%s, %s - %s - Version %s - License %s\n"), ProgName, ProgAuthor, ProgDate, ProgVersion, _("GPL V2 or higher"));
 	return TRUE;
 }
 
@@ -48,17 +48,17 @@ static gboolean usage(int status)
 	if (status == 0)
 		{
 			fprintf (stderr, 
-					 "Try `%s --help' for more information.\n", ProgName);
+					 _("Try `%s --help' for more information.\n"), ProgName);
 			return FALSE;
 		}
 	else
 		{
 			version();
-			fprintf(stdout, "\n%s is a tool that prints struct sizes", ProgName);
-			fprintf(stdout, "\nUsage:\n  %s [options]\n", ProgName);
-			fprintf(stdout, "\nOptions:\n\
+			fprintf(stdout, _("\n%s is a tool that prints struct sizes"), ProgName);
+			fprintf(stdout, _("\nUsage:\n  %s [options]\n"), ProgName);
+			fprintf(stdout, _("\nOptions:\n\
   -h, --help\tThis help.\n\
-  -v, --version\tProgram version information.\n");
+  -v, --version\tProgram version information.\n"));
 			return TRUE;
 		}
 }
@@ -112,7 +112,7 @@ static void print_int_types(void)
 {
 	unsigned long taille = 0;
 
-	fprintf(stdout, "Integer types:\n");
+	fprintf(stdout, _("Integer types:\n"));
 	
 	taille = sizeof(short int);
 	fprintf(stdout, "\tshort int    : %ld (%ld bits)\n", taille, taille*8);
