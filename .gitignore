@@ -1,7 +1,7 @@
 .svn
 src/.svn
 po/.svn
-m4/.svn
+m4/*
 autom4te.cache/
 *.la
 *.lo
@@ -27,3 +27,7 @@ po/POTFILES
 po/fr.gmo
 po/stamp-it
 stamp-h1
+src/.deps/
+src/taille
+intltool-*
+compile
