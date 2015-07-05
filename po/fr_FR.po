@@ -1,0 +1,90 @@
+# French translation of taille's project.
+# Copyright (C) 2015
+# This file is distributed under the same license as the taille package.
+# Olivier DELHOMME <olivier.delhomme@free.fr>, 2008.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-05 21:01+0200\n"
+"PO-Revision-Date: 2015-07-05 21:01+0200\n"
+"Last-Translator: Olivier DELHOMME <olivier.delhomme@free.fr>\n"
+"Language-Team: French team\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/taille.c:38
+#, c-format
+msgid "%s, %s - %s - Version %s - License %s\n"
+msgstr "%s, %s - %s - Version %s - Licence %s\n"
+
+#: ../src/taille.c:38
+msgid "GPL V2 or higher"
+msgstr "GPL V2 ou supérieur"
+
+#: ../src/taille.c:52
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Essayer `%s --help' pour plus d'information.\n"
+
+#: ../src/taille.c:58
+#, c-format
+msgid ""
+"\n"
+"%s is a tool that prints struct sizes"
+msgstr ""
+"\n"
+"%s est un programme qui indique les tailles des structures."
+
+#: ../src/taille.c:59
+#, c-format
+msgid ""
+"\n"
+"Usage:\n"
+"  %s [options]\n"
+msgstr ""
+"\n"
+"Usage :\n"
+"  %s [options]\n"
+
+#: ../src/taille.c:60
+#, c-format
+msgid ""
+"\n"
+"Options:\n"
+"  -h, --help\tThis help.\n"
+"  -v, --version\tProgram version information.\n"
+msgstr ""
+"\n"
+"Options :\n"
+"  -h, --help\tCette aide.\n"
+"  -v, --version\tInformation sur la version du programme.\n"
+
+#: ../src/taille.c:124
+#, c-format
+msgid "Gettext package : %s\n"
+msgstr ""
+
+#: ../src/taille.c:128
+#, c-format
+msgid "Bindtextdomain : %s\n"
+msgstr ""
+
+#: ../src/taille.c:133
+#, c-format
+msgid "Code set : %s\n"
+msgstr ""
+
+#: ../src/taille.c:138
+#, c-format
+msgid "Text domain : %s\n"
+msgstr ""
+
+#: ../src/taille.c:152
+#, c-format
+msgid "Integer types:\n"
+msgstr "Entiers :\n"

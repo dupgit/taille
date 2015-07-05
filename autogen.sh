@@ -4,8 +4,8 @@ aclocal
 libtoolize 
 automake --gnu --add-missing -a -c 
 autoconf
-glib-gettextize --copy --force 
-intltoolize --copy --force --automake
+glib-gettextize --copy 
+intltoolize --copy --automake
 
 if [ -e ./configure ]; then
     echo
