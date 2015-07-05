@@ -55,8 +55,8 @@ static gboolean usage(int status)
 		{
 			version();
 			fprintf(stdout, "\n%s is a tool that prints struct sizes", ProgName);
-			fprintf(stdout, "\nUsage :\n  %s [options]\n", ProgName);
-			fprintf(stdout, "\nOptions :\n\
+			fprintf(stdout, "\nUsage:\n  %s [options]\n", ProgName);
+			fprintf(stdout, "\nOptions:\n\
   -h, --help\tThis help.\n\
   -v, --version\tProgram version information.\n");
 			return TRUE;
