@@ -29,6 +29,7 @@ static gboolean manage_command_line_options(Options *opt, int argc, char ** argv
 static void init_international_languages(void);
 static void print_int_types(void);
 
+
 /**
  *  prints program name, version, author, date and licence
  *  to the standard output
@@ -192,6 +193,8 @@ int main (int argc, char ** argv)
 		{
 			print_int_types();
 		}
+
+	g_free(opt);
 
 	return exit_value;
 }
