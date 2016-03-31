@@ -170,6 +170,14 @@ static void print_int_types(void)
 
 
 
+static void print_ids(void)
+{
+	fprintf(stdout, "pid_t: %zu\n", sizeof(pid_t));
+    	fprintf(stdout, "uid_t: %zu\n", sizeof(uid_t));
+    	fprintf(stdout, "gid_t: %zu\n", sizeof(gid_t));
+}
+
+
 /**
  *  main program
  *  options :
@@ -192,6 +200,7 @@ int main (int argc, char ** argv)
 	if (opt->usage != TRUE)
 		{
 			print_int_types();
+			print_ids();
 		}
 
 	g_free(opt);

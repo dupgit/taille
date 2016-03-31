@@ -31,10 +31,11 @@
 #include <getopt.h>
 #include <glib.h>
 #include <glib/gi18n.h>
+#include <sys/types.h>
 
 #define ProgName "taille"
-#define ProgVersion "0.0.1"
-#define ProgDate "05.08.2008"
+#define ProgVersion "0.0.2"
+#define ProgDate "31.03.2016"
 #define ProgAuthor "Olivier Delhomme <olivier.delhomme@free.fr>"
 
 typedef struct
