@@ -144,6 +144,16 @@ static void init_international_languages(void)
 }
 
 
+static void print_title(gchar *title)
+{
+	fprintf(stdout, _("\n%s\n"), title);
+}
+
+
+static void print_size(gchar *type, size_t taille)
+{
+	fprintf(stdout, "\t%s: %zu (%zu bits)\n", type, taille, taille*8);
+}
 
 
 /**
@@ -151,30 +161,34 @@ static void init_international_languages(void)
  */
 static void print_int_types(void)
 {
-	unsigned long taille = 0;
 
-	fprintf(stdout, _("Integer types:\n"));
-	
-	taille = sizeof(short int);
-	fprintf(stdout, "\tshort int    : %ld (%ld bits)\n", taille, taille*8);
+	print_title(_("Integer types:"));
 
-	taille = sizeof(int);	
-	fprintf(stdout, "\tint          : %ld (%ld bits)\n", taille, taille*8);
-	
-	taille = sizeof(long int);
-	fprintf(stdout, "\tlong int     : %ld (%ld bits)\n", taille, taille*8);
-
-    taille = sizeof(long long int);
-	fprintf(stdout, "\tlong long int: %ld (%ld bits)\n", taille, taille*8); 
+	print_size("short int", sizeof(short int));
+	print_size("int", sizeof(int));
+	print_size("long int", sizeof(long int));
+	print_size("long long int", sizeof(long long int));
 }
-
 
 
 static void print_ids(void)
 {
-	fprintf(stdout, "pid_t: %zu\n", sizeof(pid_t));
-    	fprintf(stdout, "uid_t: %zu\n", sizeof(uid_t));
-    	fprintf(stdout, "gid_t: %zu\n", sizeof(gid_t));
+	print_title(_("Ids types:"));
+
+	print_size("pid_t", sizeof(pid_t));
+	print_size("uid_t", sizeof(uid_t));
+	print_size("gid_t", sizeof(gid_t));
+}
+
+
+static void print_files_related(void)
+{
+	print_title(_("Files related:"));
+
+	print_size("ino_t", sizeof(ino_t));
+	print_size("off_t", sizeof(off_t));
+	print_size("loff_t", sizeof(loff_t));
+	print_size("dev_t", sizeof(dev_t));
 }
 
 
@@ -201,6 +215,7 @@ int main (int argc, char ** argv)
 		{
 			print_int_types();
 			print_ids();
+			print_files_related();
 		}
 
 	g_free(opt);

@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-05 21:26+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/taille.c:39
+#, c-format
+msgid "%s, %s - %s - Version %s - License %s\n"
+msgstr ""
+
+#: ../src/taille.c:39
+msgid "GPL V2 or higher"
+msgstr ""
+
+#: ../src/taille.c:53
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr ""
+
+#: ../src/taille.c:59
+#, c-format
+msgid ""
+"\n"
+"%s is a tool that prints struct sizes"
+msgstr ""
+
+#: ../src/taille.c:60
+#, c-format
+msgid ""
+"\n"
+"Usage:\n"
+"  %s [options]\n"
+msgstr ""
+
+#: ../src/taille.c:61
+#, c-format
+msgid ""
+"\n"
+"Options:\n"
+"  -h, --help\tThis help.\n"
+"  -v, --version\tProgram version information.\n"
+msgstr ""
+
+#: ../src/taille.c:149
+#, c-format
+msgid ""
+"\n"
+"%s\n"
+msgstr ""
+
+#: ../src/taille.c:165
+msgid "Integer types:"
+msgstr ""
+
+#: ../src/taille.c:176
+msgid "Ids types:"
+msgstr ""
+
+#: ../src/taille.c:186
+msgid "Files related:"
+msgstr ""
