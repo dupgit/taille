@@ -8,7 +8,7 @@
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2, or  (at your option) 
+ *  the Free Software Foundation; either version 2, or  (at your option)
  *  any later version.
  *
  *  This program is distributed in the hope that it will be useful,
@@ -18,7 +18,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. 
+ *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
 #include "taille.h"
@@ -27,8 +27,12 @@ static gboolean version(void);
 static gboolean usage(int status);
 static gboolean manage_command_line_options(Options *opt, int argc, char ** argv);
 static void init_international_languages(void);
+static void print_title(gchar *title);
+static void print_size(gchar *type, size_t taille);
 static void print_int_types(void);
-
+static void print_ids(void);
+static void print_files_related(void);
+static void print_lengths(void);
 
 /**
  *  prints program name, version, author, date and licence
@@ -49,7 +53,7 @@ static gboolean usage(int status)
 {
 	if (status == 0)
 		{
-			fprintf (stderr, 
+			fprintf (stderr,
 					 _("Try `%s --help' for more information.\n"), ProgName);
 			return FALSE;
 		}
@@ -81,12 +85,12 @@ static gboolean manage_command_line_options(Options *opt, int argc, char ** argv
 				{
 				case 0:				/* long options handler */
 					break;
-	  
+
 				case 'v':
 					exit_value = version();
 					opt->usage = TRUE; 	/* We do not want to continue after */
 					break;
-	 
+
 				case 'h':
 					exit_value = usage(1);
 					opt->usage = TRUE;
@@ -192,30 +196,40 @@ static void print_files_related(void)
 }
 
 
+static void print_lengths(void)
+{
+        print_title(_("Lengths:"));
+
+        print_size("size_t", sizeof(size_t));
+        print_size("ssize_t", sizeof(ssize_t));
+}
+
+
 /**
  *  main program
  *  options :
  *   --version
  *   --help
  */
-int main (int argc, char ** argv) 
-{  
+int main (int argc, char ** argv)
+{
 	Options *opt;   /* A structure to manage the command line options  */
 	gboolean exit_value = TRUE;
 
 	opt = (Options *) g_malloc0(sizeof(Options));
 	opt->usage = FALSE;
-	
+
 	init_international_languages();
 
 	/* Command line options evaluation */
 	exit_value = manage_command_line_options(opt, argc, argv);
-	
+
 	if (opt->usage != TRUE)
 		{
 			print_int_types();
 			print_ids();
 			print_files_related();
+                        print_lengths();
 		}
 
 	g_free(opt);
