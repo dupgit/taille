@@ -32,3 +32,4 @@ src/taille
 intltool-*
 compile
 po/fr_FR.gmo
+INSTALL

@@ -1,4 +1,25 @@
 Project taille
 
-A simple tool that may print the sizes of some structures such
-as intergers for instance.
+A simple tool that prints the sizes of some structures:
+
+
+Integer types:
+	short int: 2 (16 bits)
+	int: 4 (32 bits)
+	long int: 8 (64 bits)
+	long long int: 8 (64 bits)
+
+Ids types:
+	pid_t: 4 (32 bits)
+	uid_t: 4 (32 bits)
+	gid_t: 4 (32 bits)
+
+Files related:
+	ino_t: 8 (64 bits)
+	off_t: 8 (64 bits)
+	loff_t: 8 (64 bits)
+	dev_t: 8 (64 bits)
+
+Lengths:
+	size_t: 8 (64 bits)
+	ssize_t: 8 (64 bits)
